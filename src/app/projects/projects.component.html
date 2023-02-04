@@ -1,12 +1,54 @@
-<div class="grid place-items-center"  id="projects">
-  <div
-    class="w-full bg-slate-800 px-6 py-8 text-center shadow-xl ring-1 ring-slate-900/5"
-  >
-    <h1 class="mb-8 text-base font-medium tracking-tight text-white">Projects</h1>
-    <img src="assets/LD_icon.png" alt="LDprg Logo" class="logo mx-auto" />
-    <h3 class="mt-4 text-base font-medium tracking-tight text-white">LDprg</h3>
-    <p class="mt-2 text-sm text-slate-400">
-      Hi I am a programmer and I like to code in C++.
-    </p>
+<app-card title="Projects" id="projects">
+  <div class="grid w-full grid-cols-10 text-white">
+    <div class="col-span-1 border border-slate-500 py-3 text-left">
+      <ul
+        *ngFor="let item of projects"
+        class="py-3 hover:bg-gray-500"
+        [ngClass]="selectedProject.name === item.name ? 'bg-slate-900' : ''"
+      >
+        <li>
+          <button
+            type="button"
+            class="w-full font-bold text-slate-400 outline-none"
+            (click)="selectProject(item)"
+          >
+            {{ item.name }}
+          </button>
+        </li>
+      </ul>
+    </div>
+    <ul class="txt col-span-9 border border-slate-500 p-3 text-left">
+      <li>
+        <h3 class="text-lg font-bold">{{ selectedProject.name }}</h3>
+      </li>
+
+      <li>Programming languages used: &nbsp; {{ selectedProject.language }}</li>
+
+      <li>
+        <div>This project can be found on:</div>
+        <div
+          [hidden]="selectedProject.reference.platform != 'github'"
+          class="m-3"
+        >
+          <a
+            [href]="selectedProject.reference.url"
+            class="grid w-fit grid-cols-2"
+          >
+            <div class="mx-auto">
+              <app-icons type="github" size="8"></app-icons>
+            </div>
+            <div>
+              {{ selectedProject.reference.url }}
+            </div>
+          </a>
+        </div>
+      </li>
+
+      <li>
+        <div>
+          {{ selectedProject.description }}
+        </div>
+      </li>
+    </ul>
   </div>
-</div>
+</app-card>

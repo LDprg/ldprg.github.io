@@ -9,9 +9,21 @@ import { MainComponent } from './main/main.component';
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+import { CardComponent } from './card/card.component';
+import { IconsComponent } from './icons/icons.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, MainComponent, AboutComponent, ProjectsComponent, ContactComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    MainComponent,
+    AboutComponent,
+    ProjectsComponent,
+    ContactComponent,
+    CardComponent,
+    IconsComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

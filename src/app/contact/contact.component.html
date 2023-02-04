@@ -1,12 +1,40 @@
-<div class="grid place-items-center" id="contact">
-  <div
-    class="w-full bg-slate-800 px-6 py-8 text-center shadow-xl ring-1 ring-slate-900/5"
+<app-card title="Contact" class="text-white"  id="contact">
+  <img src="assets/LD_icon.png" alt="LDprg Logo" class="logo mx-auto" />
+
+  <table
+    class="mx-auto mt-8 border-separate border-spacing-5 border border-slate-500"
   >
-    <h1 class="mb-8 text-base font-medium tracking-tight text-white">Contact</h1>
-    <img src="assets/LD_icon.png" alt="LDprg Logo" class="logo mx-auto" />
-    <h3 class="mt-4 text-base font-medium tracking-tight text-white">LDprg</h3>
-    <p class="mt-2 text-sm text-slate-400">
-      Hi I am a programmer and I like to code in C++.
-    </p>
-  </div>
-</div>
+    <thead class="text-slate-100">
+      <tr>
+        <th>Contact</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody class="text-slate-300">
+      <tr>
+        <td>Github:</td>
+        <td>
+          <a
+            href="https://github.com/LDprg"
+            target="_blank"
+            class="self-center outline-none"
+          >
+            <app-icons type="github"></app-icons>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>E-Mail:</td>
+        <td>
+          <a
+            href="mailto:lukas_4dr@gmx.at"
+            target="_blank"
+            class="self-center outline-none"
+          >
+            <app-icons type="mail"></app-icons>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</app-card>
