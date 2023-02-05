@@ -1,4 +1,4 @@
-import { Attribute, Component } from '@angular/core';
+import { Attribute, Component, Input } from "@angular/core";
 
 @Component({
   selector: 'app-icons',
@@ -6,11 +6,16 @@ import { Attribute, Component } from '@angular/core';
   styleUrls: ['./icons.component.scss'],
 })
 export class IconsComponent {
-  public type: string = '';
-  public size: number = 0;
+  @Input() type: string = '';
+  @Input() size: string = "8";
+  public center: boolean = false;
 
-  constructor(@Attribute('type') type: string, @Attribute('size') size: number = 8) {
-    this.type = type;
-    this.size = size;
+  constructor(@Attribute('center') center: boolean) {
+    if (center)
+      this.center = center;
+  }
+
+  getStyle() {
+    return this.center ? 'mx-auto' : '';
   }
 }

@@ -1,52 +1,64 @@
 <app-card title="Projects" id="projects">
   <div class="grid w-full grid-cols-10 text-white">
-    <div class="col-span-1 border border-slate-500 py-3 text-left">
+    <div class="col-span-1 border border-slate-500 text-left">
       <ul
         *ngFor="let item of projects"
-        class="py-3 hover:bg-gray-500"
-        [ngClass]="selectedProject.name === item.name ? 'bg-slate-900' : ''"
+        class="hover:bg-slate-700"
+        [ngClass]="selectedProject.short === item.short ? 'bg-slate-900' : ''"
       >
         <li>
           <button
             type="button"
-            class="w-full font-bold text-slate-400 outline-none"
+            class="h-full w-full py-3 font-bold text-slate-400 outline-none"
             (click)="selectProject(item)"
           >
-            {{ item.name }}
+            {{ item.short }}
           </button>
         </li>
       </ul>
     </div>
     <ul class="txt col-span-9 border border-slate-500 p-3 text-left">
       <li>
-        <h3 class="text-lg font-bold">{{ selectedProject.name }}</h3>
+        <h3 class="text-xl font-bold">{{ selectedProject.short }}</h3>
+        <p class="text-lg text-slate-400">
+          {{ selectedProject.long }}
+        </p>
       </li>
 
-      <li>Programming languages used: &nbsp; {{ selectedProject.language }}</li>
-
-      <li>
-        <div>This project can be found on:</div>
-        <div
-          [hidden]="selectedProject.reference.platform != 'github'"
-          class="m-3"
-        >
-          <a
-            [href]="selectedProject.reference.url"
-            class="grid w-fit grid-cols-2"
-          >
-            <div class="mx-auto">
-              <app-icons type="github" size="8"></app-icons>
-            </div>
-            <div>
-              {{ selectedProject.reference.url }}
-            </div>
-          </a>
-        </div>
+      <li>Programming languages used: &nbsp;
+        <span class="font-semibold">{{ selectedProject.language }}</span>
       </li>
 
       <li>
         <div>
           {{ selectedProject.description }}
+        </div>
+      </li>
+
+      <li>
+        <div>This project components can be found on:</div>
+        <div *ngFor="let item of selectedProject.reference" class="m-3 mb-0">
+          <a
+            [hidden]="item.platform == ''"
+            [href]="item.url"
+            class="grid w-auto grid-cols-4"
+          >
+            <div>
+              {{ item.name }}
+            </div>
+            <div>
+              {{ item.platform }}
+            </div>
+            <div>
+              <app-icons
+                [type]="item.platform.toLowerCase()"
+                size="8"
+              ></app-icons>
+            </div>
+            <div>
+              {{ item.url }}
+            </div>
+          </a>
         </div>
       </li>
     </ul>

@@ -1,5 +1,10 @@
-<app-card title="Contact" class="text-white"  id="contact">
-  <img src="assets/LD_icon.png" alt="LDprg Logo" class="logo mx-auto" />
+<app-card title="Contact" class="text-white" id="contact">
+  <div>Want to get in touch?</div>
+  <div>
+    For project specific questions, please just open a pull-requests or issue on
+    the project git page.
+  </div>
+  <div>Feel free to contact me via any of the following:</div>
 
   <table
     class="mx-auto mt-8 border-separate border-spacing-5 border border-slate-500"
@@ -7,6 +12,7 @@
     <thead class="text-slate-100">
       <tr>
         <th>Contact</th>
+        <th>Platform</th>
         <th>Link</th>
       </tr>
     </thead>
@@ -19,7 +25,38 @@
             target="_blank"
             class="self-center outline-none"
           >
-            <app-icons type="github"></app-icons>
+            <app-icons type="github" size="10" center="center"></app-icons>
+          </a>
+        </td>
+
+        <td>
+          <a
+            href="https://github.com/LDprg"
+            target="_blank"
+            class="self-center outline-none"
+          >
+            https://github.com/LDprg
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Bitbucket:</td>
+        <td>
+          <a
+            href="https://bitbucket.org/ldprg"
+            target="_blank"
+            class="self-center outline-none"
+          >
+            <app-icons type="bitbucket" size="10" center="center"></app-icons>
+          </a>
+        </td>
+        <td>
+          <a
+            href="https://bitbucket.org/ldprg"
+            target="_blank"
+            class="self-center outline-none"
+          >
+            https://bitbucket.org/ldprg
           </a>
         </td>
       </tr>
@@ -31,10 +68,61 @@
             target="_blank"
             class="self-center outline-none"
           >
-            <app-icons type="mail"></app-icons>
+            <app-icons type="mail" size="10" center="center"></app-icons>
+          </a>
+        </td>
+        <td>
+          <a
+            href="mailto:lukas_4dr@gmx.at"
+            target="_blank"
+            class="self-center outline-none"
+          >
+            lukas_4dr@gmx.at
           </a>
         </td>
       </tr>
     </tbody>
   </table>
+  <div>
+    <div class="my-8">
+      <div>Want to support me?</div>
+      <div>Support me on BuyMeACoffee.com or Patreon.com:</div>
+    </div>
+
+    <div class="mx-10 grid grid-cols-10 items-center">
+      <div class="col-span-2 col-start-4">
+        <a
+          href="https://www.buymeacoffee.com/LDprg"
+          target="_blank"
+          class="mx-auto self-center outline-none"
+        >
+          <img
+            src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+            alt="Buy Me A Coffee"
+            class="mx-auto"
+            style="height: 60px !important; width: 217px !important"
+          />
+        </a>
+      </div>
+
+      <div class="col-span-2 col-start-6">
+        <a
+          href="https://www.patreon.com/LDprg"
+          target="_blank"
+          class="mx-auto self-center outline-none"
+        >
+          <img
+            src="https://c5.patreon.com/external/logo/become_a_patron_button.png"
+            alt="Become a Patron"
+            class="mx-auto"
+            style="height: 60px !important; width: 217px !important"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="mt-8">
+    <div>Thanks for visiting my website!</div>
+    <img src="assets/LD_icon.png" alt="LDprg Logo" class="logo mx-auto mt-8" />
+  </div>
 </app-card>
