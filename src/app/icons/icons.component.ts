@@ -1,4 +1,4 @@
-import { Attribute, Component, Input } from "@angular/core";
+import { Attribute, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-icons',
@@ -7,12 +7,11 @@ import { Attribute, Component, Input } from "@angular/core";
 })
 export class IconsComponent {
   @Input() type: string = '';
-  @Input() size: string = "8";
+  @Input() size: string = '8';
   public center: boolean = false;
 
   constructor(@Attribute('center') center: boolean) {
-    if (center)
-      this.center = center;
+    if (center) this.center = center;
   }
 
   getStyle() {

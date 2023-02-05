@@ -25,7 +25,8 @@
         </p>
       </li>
 
-      <li>Programming languages used: &nbsp;
+      <li>
+        Programming languages used: &nbsp;
         <span class="font-semibold">{{ selectedProject.language }}</span>
       </li>
 
@@ -37,7 +38,10 @@
 
       <li>
         <div>This project components can be found on:</div>
-        <div *ngFor="let item of selectedProject.reference" class="m-3 mb-0">
+        <div
+          *ngFor="let item of selectedProject.reference"
+          class="m-2 mb-0 border border-slate-500 p-2"
+        >
           <a
             [hidden]="item.platform == ''"
             [href]="item.url"
