@@ -1,19 +1,15 @@
 <app-card title="Projects" id="projects">
-  <div class="flex flex-col md:flex-row w-full text-white">
-    <div class="flex flex-warp flex-row items-stretch md:flex-col w-full md:w-fit border border-slate-500 text-left">
-        <div
-          class="basis-[100%] md:flex-1 p-3 hover:bg-slate-700"
-          [ngClass]="selectedProject.short === item.short ? 'bg-slate-900' : ''"
-          *ngFor="let item of projects"
-        >
-          <button
-            type="button"
-            class="h-full w-full py-3 font-bold text-slate-400 outline-none"
-            (click)="selectProject(item)"
-          >
-            {{ item.short }}
-          </button>
-        </div>
+  <div class="flex flex-col text-white md:flex-row">
+    <div class="flex flex-wrap border border-slate-500 md:w-fit md:flex-col">
+      <button
+        type="button"
+        class="flex-1 p-3 font-bold text-slate-400 outline-none hover:bg-slate-700"
+        [ngClass]="selectedProject.short === item.short ? 'bg-slate-900' : ''"
+        *ngFor="let item of projects"
+        (click)="selectProject(item)"
+      >
+        {{ item.short }}
+      </button>
     </div>
     <ul class="txt flex-grow border border-slate-500 p-3 text-left">
       <li>
@@ -43,21 +39,21 @@
           <a
             [hidden]="item.platform == ''"
             [href]="item.url"
-            class="flex flex-warp"
+            class="flex-wrap flex"
           >
-            <div class="basis-1/2 md:flex-1 p-2">
+            <div class="p-2 flex-1">
               {{ item.name }}
             </div>
-            <div class="basis-1/2 md:flex-1 p-2">
+            <div class="p-2 flex-1">
               {{ item.platform }}
             </div>
-            <div class="basis-1/2 md:flex-1 p-2">
+            <div class="p-2 flex-1">
               <app-icons
                 [type]="item.platform.toLowerCase()"
                 size="8"
               ></app-icons>
             </div>
-            <div class="basis-1/2 md:flex-1 p-2">
+            <div class="p-2 flex-1">
               {{ item.url }}
             </div>
           </a>
