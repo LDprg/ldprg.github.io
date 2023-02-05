@@ -39,21 +39,21 @@
           <a
             [hidden]="item.platform == ''"
             [href]="item.url"
-            class="flex-wrap flex"
+            class="flex flex-wrap"
           >
-            <div class="p-2 flex-1">
+            <div class="flex-1 p-2">
               {{ item.name }}
             </div>
-            <div class="p-2 flex-1">
+            <div class="flex-1 p-2">
               {{ item.platform }}
             </div>
-            <div class="p-2 flex-1">
+            <div class="flex-1 p-2">
               <app-icons
                 [type]="item.platform.toLowerCase()"
                 size="8"
               ></app-icons>
             </div>
-            <div class="p-2 flex-1">
+            <div class="flex-1 p-2">
               {{ item.url }}
             </div>
           </a>
